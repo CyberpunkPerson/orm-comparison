@@ -11,9 +11,8 @@
         <relativePath/>
     </parent>
 
-
     <groupId>com.github.cyberpunkperson</groupId>
-    <artifactId>orm-comparasion</artifactId>
+    <artifactId>orm-comparison</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -26,7 +25,7 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
 
         <!--Configuration-->
-        <self-default.package>com.github.cyberpunkperson.orm.comporasion</self-default.package>
+        <self-default.package>com.github.cyberpunkperson.orm.comparison</self-default.package>
     </properties>
 
     <dependencies>
@@ -121,7 +120,7 @@
                 <version>3.3.4</version>
                 <executions>
                     <execution>
-                        <id>orm-comporasion</id>
+                        <id>orm-comparison</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -149,7 +148,6 @@
                         </configuration>
                     </execution>
                 </executions>
-
             </plugin>
         </plugins>
     </build>

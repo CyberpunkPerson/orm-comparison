@@ -1,4 +1,4 @@
-package com.github.cyberpunkperson.orm.comporasion.domain.order;
+package com.github.cyberpunkperson.orm.comparison.domain.order;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

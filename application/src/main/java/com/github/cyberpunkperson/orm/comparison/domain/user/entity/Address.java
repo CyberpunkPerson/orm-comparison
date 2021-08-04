@@ -1,4 +1,4 @@
-package com.github.cyberpunkperson.orm.comporasion.domain.user.entity;
+package com.github.cyberpunkperson.orm.comparison.domain.user.entity;
 
 import lombok.Data;
 

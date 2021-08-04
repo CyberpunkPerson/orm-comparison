@@ -1,7 +1,7 @@
-package com.github.cyberpunkperson.orm.comporasion.domain.order;
+package com.github.cyberpunkperson.orm.comparison.domain.order;
 
-import com.github.cyberpunkperson.orm.comporasion.controller.OrdersApiDelegate;
-import com.github.cyberpunkperson.orm.comporasion.model.GetOrdersResponse;
+import com.github.cyberpunkperson.orm.comparison.controller.OrdersApiDelegate;
+import com.github.cyberpunkperson.orm.comparison.model.GetOrdersResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
