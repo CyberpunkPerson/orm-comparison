@@ -1,4 +1,4 @@
-package com.github.cyberpunkperson.orm.comporasion;
+package com.github.cyberpunkperson.orm.comparison;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
