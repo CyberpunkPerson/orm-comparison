@@ -10,7 +10,7 @@ info:
 
 tags:
   - name: items
-    description: Items in the store
+    description: Items in store
   - name: orders
     description: Orders form with items by users
   - name: users
@@ -40,85 +40,7 @@ paths:
         500:
           $ref: '#/components/responses/Error'
 
-    put:
-      tags:
-        - items
-      summary: putItem
-      description: Save or update existing item
-      operationId: putItem
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PutItemRequest'
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PutItemResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
-
-  /items/{itemId}:
-
-    parameters:
-      - $ref: '#/components/parameters/ItemId'
-
-    get:
-      tags:
-        - items
-      summary: getItemById
-      description: Get item by id
-      operationId: getItemById
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetItemResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
-
   /orders:
-
-    put:
-      tags:
-        - orders
-      summary: putOrder
-      description: Save or update existing order
-      operationId: putOrder
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PutOrderRequest'
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PutOrderResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
-
 
     get:
       tags:
@@ -140,111 +62,7 @@ paths:
         500:
           $ref: '#/components/responses/Error'
 
-  /orders/{orderId}:
-
-    parameters:
-      - $ref: '#/components/parameters/OrderId'
-
-    get:
-      tags:
-        - orders
-      summary: getOrderById
-      description: Get order by id
-      operationId: getOrderById
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetOrderResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
-
-  /orders/address/{addressId}:
-
-    parameters:
-      - $ref: '#/components/parameters/AddressId'
-
-    get:
-      tags:
-        - orders
-      summary: getOrdersByAddressId
-      description: Get orders by addressId
-      operationId: getOrdersByAddressId
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetOrdersResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
-
-  /orders/contain-items:
-
-    post:
-      tags:
-        - orders
-      summary: getOrdersByItemsId
-      description: Get orders by items id
-      operationId: getOrdersByItemsId
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GetOrderByItemsIdRequest'
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetOrdersResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
-
   /users:
-
-    put:
-      tags:
-        - users
-      summary: putUser
-      description: Save or update existing user
-      operationId: putUser
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PutUserRequest'
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PutUserResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
 
     get:
       tags:
@@ -266,73 +84,8 @@ paths:
         500:
           $ref: '#/components/responses/Error'
 
-  /users/{userId}:
-
-    parameters:
-      - $ref: '#/components/parameters/UserId'
-
-    get:
-      tags:
-        - users
-      summary: getUserById
-      description: Get user by id
-      operationId: getUserById
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetUserResponse'
-        400:
-          $ref: '#/components/responses/Error'
-        401:
-          $ref: '#/components/responses/Error'
-        500:
-          $ref: '#/components/responses/Error'
 
 components:
-
-  parameters:
-    ItemId:
-      description: Item id (generates by frontend to avoid dublications)
-      name: itemId
-      in: path
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 127aee00-fa63-4eff-a7a6-a4bc21118776
-
-    OrderId:
-      description: Order id (generates by frontend to avoid dublications)
-      name: orderId
-      in: path
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 127aee00-fa63-4eff-a7a6-a4bc21118776
-
-    UserId:
-      description: User id (generates by frontend to avoid dublications)
-      name: userId
-      in: path
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 127aee00-fa63-4eff-a7a6-a4bc21118776
-
-    AddressId:
-      description: Address id (generates by frontend to avoid dublications)
-      name: addressId
-      in: path
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 127aee00-fa63-4eff-a7a6-a4bc21118776
 
   responses:
 
@@ -356,30 +109,6 @@ components:
           items:
             $ref: '#/components/schemas/Item'
 
-    GetItemResponse:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/Item'
-
-    PutItemRequest:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/Item'
-
-    PutItemResponse:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/Item'
-
     GetOrdersResponse:
       type: object
       required:
@@ -391,42 +120,6 @@ components:
           items:
             $ref: '#/components/schemas/Order'
 
-    GetOrderResponse:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/Order'
-
-    GetOrderByItemsIdRequest:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          type: array
-          minLength: 1
-          items:
-              type: string
-              format: uuid
-
-    PutOrderRequest:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/Order'
-
-    PutOrderResponse:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/Order'
-
     GetUsersResponse:
       type: object
       required:
@@ -437,31 +130,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/User'
-
-    GetUserResponse:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/User'
-
-    PutUserRequest:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/User'
-
-    PutUserResponse:
-      type: object
-      required:
-        - payload
-      properties:
-        payload:
-          $ref: '#/components/schemas/User'
-
 
     Item:
       description: Item in the store
@@ -489,7 +157,7 @@ components:
           example: Example desecription
         price:
           description: Item's price
-          type: big-decimal
+          type: double
 
     Order:
       description: Order in the store
@@ -497,7 +165,6 @@ components:
       required:
         - id
         - userId
-        - address
         - items
       properties:
         id:
@@ -510,8 +177,6 @@ components:
           type: string
           format: uuid
           example: 397aee00-f163-4eff-a7a6-a4bc11118776
-        address:
-          $ref: '#/components/schemas/Address'
         items:
           description: Items in the order
           type: array
