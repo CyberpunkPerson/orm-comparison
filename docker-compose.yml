@@ -3,14 +3,19 @@ version: '3.8'
 services:
   postgres:
     container_name: orm-comparison-postgres
-    build: './config/postgres'
+    build: 'environment/postgres'
     environment:
       POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
+  application:
+    container_name: orm-comparison-application
+    build: 'application'
+    ports:
+      - 8080:8080
   grafana:
     container_name: orm-comparison-grafana
-    build: './config/grafana'
+    build: 'environment/grafana'
     user: "$UID:$GID"
     ports:
       - 3000:3000
@@ -30,7 +35,7 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./environment/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./volumes/prometheus:/prometheus
     networks:
       monitoring:
