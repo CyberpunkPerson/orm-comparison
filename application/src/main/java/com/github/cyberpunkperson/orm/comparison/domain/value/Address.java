@@ -1,11 +1,11 @@
-package com.github.cyberpunkperson.orm.comparison.domain.user.entity;
+package com.github.cyberpunkperson.orm.comparison.domain.value;
 
 import lombok.Data;
 
 import java.util.UUID;
 
 @Data
-class Address {
+public class Address {
 
     private UUID id;
 

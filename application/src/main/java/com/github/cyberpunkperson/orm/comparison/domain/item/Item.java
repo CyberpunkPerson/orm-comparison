@@ -1,12 +1,13 @@
-package com.github.cyberpunkperson.orm.comparison.domain.order;
+package com.github.cyberpunkperson.orm.comparison.domain.item;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Data
-class Item {
+public class Item {
 
     @Id
     private UUID id;
@@ -15,6 +16,6 @@ class Item {
 
     private String description;
 
-    private Double price;
+    private BigDecimal price;
 
 }
