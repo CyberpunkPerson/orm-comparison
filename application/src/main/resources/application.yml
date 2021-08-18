@@ -1,3 +1,15 @@
+spring:
+  application:
+    name: orm_comparison
+  datasource:
+    url: jdbc:postgresql://postgres:5432/postgres?currentSchema=orm_comparison
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 1
+
 logging:
   level:
     org.springframework: debug
