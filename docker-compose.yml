@@ -13,6 +13,10 @@ services:
     build: 'application'
     ports:
       - 8080:8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=jdbc
+    depends_on:
+      - postgres
   grafana:
     container_name: orm-comparison-grafana
     build: 'environment/grafana'

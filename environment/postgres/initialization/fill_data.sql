@@ -8,7 +8,7 @@ values ('c8356372-432c-4f8e-9cfb-329d911817b1', 'Patia', 'd576fafc-8743-40a0-968
        ('314bb2dc-c400-460d-9d09-aaa5ba74dd21', 'Vasia', 'fd385db0-da17-488e-a8ac-2b665295c034'),
        ('f325dd43-e8cb-4aaf-9da2-b10ede8e42d0', 'Agnes', 'a8b6deab-0962-4fe8-a19e-b1811cc71aff');
 
-insert into orm_comparison.order (id, user_id, address_id)
+insert into orm_comparison.orders (id, user_id, address_id)
 values ('6c54237f-7092-4d63-9227-449ffde3586c', 'c8356372-432c-4f8e-9cfb-329d911817b1', 'd576fafc-8743-40a0-9685-fa5ac9c690c5'),
        ('df911b93-826c-4bda-8719-90ae726ab0b8', 'c8356372-432c-4f8e-9cfb-329d911817b1', 'd576fafc-8743-40a0-9685-fa5ac9c690c5'),
        ('0da7e756-a01d-468c-b0e9-6c3bcc2ca72f', '314bb2dc-c400-460d-9d09-aaa5ba74dd21', 'fd385db0-da17-488e-a8ac-2b665295c034'),

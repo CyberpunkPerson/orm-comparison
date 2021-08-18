@@ -22,7 +22,7 @@ create table orm_comparison.users
     constraint users_fk_address foreign key (address_id) references orm_comparison.address (id)
 );
 
-create table orm_comparison.order
+create table orm_comparison.orders
 (
     id         uuid not null,
     user_id    uuid not null,
@@ -48,6 +48,6 @@ create table orm_comparison.order_item
     order_id uuid not null,
     item_id  uuid not null,
 
-    constraint order_item_fk_order foreign key (order_id) references orm_comparison.order (id),
+    constraint order_item_fk_order foreign key (order_id) references orm_comparison.orders (id),
     constraint order_item_fk_item foreign key (item_id) references orm_comparison.item (id)
 );
