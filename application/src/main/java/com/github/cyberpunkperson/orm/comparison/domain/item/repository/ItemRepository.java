@@ -14,4 +14,6 @@ public interface ItemRepository {
 
     Optional<Item> findById(UUID itemId);
 
+    List<Item> findAllByOrderId(UUID orderId);
+
 }

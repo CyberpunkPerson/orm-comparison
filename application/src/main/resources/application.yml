@@ -9,7 +9,37 @@ spring:
     hikari:
       maximum-pool-size: 2
       minimum-idle: 1
+      schema: orm_comparison
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 logging:
   level:
     org.springframework: debug
+    org.hibernate.SQL: debug
+
+management:
+  metrics:
+    export.prometheus.enabled: true
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      maximum-expected-value:
+        db.timed: 10s
+        http.server.requests: 10s
+      minimum-expected-value:
+        db.timed: 10ms
+        http.server.requests: 10ms
+  endpoint:
+    metrics.enabled: true
+    prometheus.enabled: true
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  server.port: 8084
+  endpoints:
+    web:
+      base-path: /
+      path-mapping.prometheus: /metrics
+      exposure.include: prometheus,health
