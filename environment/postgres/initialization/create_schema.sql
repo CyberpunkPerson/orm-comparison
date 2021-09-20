@@ -48,6 +48,7 @@ create table orm_comparison.order_item
     order_id uuid not null,
     item_id  uuid not null,
 
+    constraint order_item_pk primary key (order_id, item_id),
     constraint order_item_fk_order foreign key (order_id) references orm_comparison.orders (id),
     constraint order_item_fk_item foreign key (item_id) references orm_comparison.item (id)
 );
